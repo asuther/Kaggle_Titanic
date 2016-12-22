@@ -13,8 +13,7 @@ class addFeatures(TransformerMixin, BaseEstimator):
 		return self
 
 	def transform(self, X):
-
-		X['Deck'] = X['Cabin'].map(lambda x: str(x)[0]).replace('n', 'UNK')
+		
 		X['FamilySize'] = X['SibSp'] + X['Parch'] + 1
 
 		return X
